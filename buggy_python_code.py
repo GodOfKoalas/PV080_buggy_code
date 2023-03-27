@@ -1,5 +1,3 @@
-import sys 
-import os
 import yaml
 import flask
 
@@ -30,7 +28,6 @@ def fetch_website(urllib_version, url):
  
     try: 
         http = urllib.PoolManager()
-        r = http.request('GET', url)
     except:
         print('Exception')
 
@@ -42,7 +39,7 @@ def load_yaml(filename):
     
 def authenticate(password):
     # Assert that the password is correct
-    assert password == "Iloveyou", "Invalid password!"
+    assert PASSWORD == "Iloveyou", "Invalid password!"
     print("Successfully authenticated!")
 
 if __name__ == '__main__':
@@ -62,6 +59,5 @@ if __name__ == '__main__':
         load_yaml(input("File name: "))
         print("Executed -ls on current folder")
     elif choice == "4":
-        password = input("Enter master password: ")
+        PASSWORD = input("Enter master password: ")
         authenticate(password)
-
